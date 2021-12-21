@@ -4,7 +4,7 @@
     </htad>
     <body>
         <h1>Student Registration Form</h1>
-        <form action="result.html" method="GET">
+        <form >
             <label for ="fname">First Name:</label><br>
             <input type="text" id="fname" name=first placeholder="Michele Hussy" required></input><br>
             <label for ="addr">Address:</label><br>
@@ -23,7 +23,7 @@
             <label for="elective">Elective course:</label>
             <select id="sub" name="subj">
                 <option value="sports">Sports</option>
-                <option value="cult">Culture</option>                
+                <option value="culture">Culture</option>                
             </select>
            <br> <label for="state">Select state:</label>
             <select id="state" name="state">
@@ -33,7 +33,37 @@
                 <option value="rj">Rajasthan</option>
             </select>    
             <br><input type="submit" value="submit button"></input>
-            <button type="reset" value="Reset">Reset Button</button>
+            <button type="reset" value="Reset" onclick="Addrow()">Reset Button</button>
         </form>
+
+        <table border="2" id="show">
+            <tr>
+            <th>
+                <td>FirstName</td>
+            </th>
+
+            <th>
+                <td>Address</td>
+            </th>
+            </tr>
+        </table>
+        <script>
+            var list1=[];
+            var list2=[];
+            var n=1;
+            var x=0;
+
+            function Addrow()
+            {
+                var Addrown=document.getElementById('show');
+                var Newrown=Addrown.insertRow(n);
+
+                list1[x]=document.getElementById("fname").value;
+                list2[x]=document.getElementById("addr").value;
+
+                var cell1=Newrown.insertCell(0);
+                var cell2=Newrown.insertCell(1);
+            }
+        </script>
     </body>
 </html>
